@@ -1,0 +1,141 @@
+[
+  {
+    "dnsSearchDomains": null,
+    "environmentFiles": null,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "secretOptions": null,
+      "options": {
+        "awslogs-group": "/ecs/ecs-morpheus-prod1-task",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "entryPoint": null,
+    "portMappings": [
+      {
+        "hostPort": 3002,
+        "protocol": "tcp",
+        "containerPort": 3002
+      }
+    ],
+    "command": null,
+    "linuxParameters": null,
+    "cpu": 0,
+    "environment": [
+      {
+        "name": "APP_ENV",
+        "value": "prod1"
+      },
+      {
+        "name": "APP_NAME",
+        "value": "change-control (prod1)"
+      },
+      {
+        "name": "AUTH_SECRET",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:AUTH_SECRET::"
+      },
+      {
+        "name": "DB_DIALECT",
+        "value": "postgres"
+      },
+      {
+        "name": "DB_HOST",
+        "value": "prod-sl-cluster-1-cluster.cluster-ca5jtpmvsdyy.us-east-1.rds.amazonaws.com"
+      },
+      {
+        "name": "DB_MAX_POOL",
+        "value": "30"
+      },
+      {
+        "name": "DB_MIN_POOL",
+        "value": "10"
+      },
+      {
+        "name": "DB_NAME",
+        "value": "prod1"
+      },
+      {
+        "name": "DB_PASSWORD",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:MORPHEUS_DB_PASSWORD::"
+      },
+      {
+        "name": "DB_USER",
+        "value": "morpheus_user"
+      },
+      {
+        "name": "ENDURANCE_URL",
+        "value": "https://endurance.zenqms.com"
+      },
+      {
+        "name": "NEW_RELIC_KEY",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:NEW_RELIC_KEY::"
+      },
+      {
+        "name": "NEW_RELIC_RECORD_SQL",
+        "value": "raw"
+      },
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "NODE_OPTIONS",
+        "value": "--max_old_space_size=6144 --max-http-header-size=16384"
+      },
+      {
+        "name": "NOTIFICATIONS_ACTIVE",
+        "value": "true"
+      },
+      {
+        "name": "NOTIFICATIONS_QUEUE_URL",
+        "value": "https://sqs.us-east-1.amazonaws.com/097589753303/notifications-prod.fifo"
+      },
+      {
+        "name": "PDFIZER_URL",
+        "value": "https://pdfizer.zenqms.com"
+      },
+      {
+        "name": "REDIS_URL",
+        "value": "redis://morpheus-prod1.bdubru.ng.0001.use1.cache.amazonaws.com:6379"
+      },
+      {
+        "name": "ROLLBAR_KEY",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:MORPHEUS_ROLLBAR_KEY::"
+      },
+      {
+        "name": "S3_BUCKET",
+        "value": "morpheus-production-uploads"
+      }
+    ],
+    "resourceRequirements": null,
+    "ulimits": null,
+    "dnsServers": null,
+    "mountPoints": [],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": null,
+    "memory": 128,
+    "memoryReservation": null,
+    "volumesFrom": [],
+    "stopTimeout": null,
+    "image": "097589753303.dkr.ecr.us-east-1.amazonaws.com/morpheus:ec9a6afe1ebff8db42668bc7561ab6a20fa3bbd9",
+    "startTimeout": null,
+    "firelensConfiguration": null,
+    "dependsOn": null,
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": null,
+    "hostname": null,
+    "extraHosts": null,
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": null,
+    "systemControls": null,
+    "privileged": null,
+    "name": "morpheus"
+  }
+]

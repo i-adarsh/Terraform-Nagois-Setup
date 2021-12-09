@@ -1,0 +1,165 @@
+[
+  {
+    "dnsSearchDomains": null,
+    "environmentFiles": null,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "secretOptions": null,
+      "options": {
+        "awslogs-group": "/ecs/ecs-exporter-prod1-task",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "entryPoint": null,
+    "portMappings": [
+      {
+        "hostPort": 3004,
+        "protocol": "tcp",
+        "containerPort": 3004
+      }
+    ],
+    "command": null,
+    "linuxParameters": null,
+    "cpu": 0,
+    "environment": [
+      {
+        "name": "APP_ENV",
+        "value": "prod1"
+      },
+      {
+        "name": "APP_NAME",
+        "value": "exporter (prod1)"
+      },
+      {
+        "name": "AUDIT_TRAIL_REQUEST_PAGE_SIZE",
+        "value": "20"
+      },
+      {
+        "name": "AUDIT_TRAIL_URL",
+        "value": "https://audit-trail.zenqms.com"
+      },
+      {
+        "name": "AUTH_SECRET",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:AUTH_SECRET::"
+      },
+      {
+        "name": "AWS_REGION",
+        "value": "us-east-1"
+      },
+      {
+        "name": "DB_HOST",
+        "value": "prod-sl-cluster-1-cluster.cluster-ca5jtpmvsdyy.us-east-1.rds.amazonaws.com"
+      },
+      {
+        "name": "DB_NAME",
+        "value": "prod1"
+      },
+      {
+        "name": "DB_PASSWORD",
+        "value": "xXt2WSR=s+EL6^`g"
+      },
+      {
+        "name": "DB_USERNAME",
+        "value": "exporter_user"
+      },
+      {
+        "name": "ENDURANCE_URL",
+        "value": "https://endurance.zenqms.com"
+      },
+      {
+        "name": "MAX_PARALLEL_REQUESTS",
+        "value": "1"
+      },
+      {
+        "name": "MORPHEUS_URL",
+        "value": "https://morpheus-report.zenqms.com"
+      },
+      {
+        "name": "NEW_RELIC_KEY",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:NEW_RELIC_KEY::"
+      },
+      {
+        "name": "NEW_RELIC_RECORD_SQL",
+        "value": "raw"
+      },
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "NODE_OPTIONS",
+        "value": "--max_old_space_size=5120 --max-http-header-size=16384"
+      },
+      {
+        "name": "NODE_PATH",
+        "value": "."
+      },
+      {
+        "name": "QUEUE_URL",
+        "value": "https://sqs.us-east-1.amazonaws.com/097589753303/exporter-prod1"
+      },
+      {
+        "name": "REDIS_URL",
+        "value": "redis://exporter-prod1.bdubru.ng.0001.use1.cache.amazonaws.com:6379"
+      },
+      {
+        "name": "REQUEST_PAGE_SIZE",
+        "value": "50"
+      },
+      {
+        "name": "REQUEST_RETRY_ATTEMPTS",
+        "value": "4"
+      },
+      {
+        "name": "REQUEST_RETRY_THROTTLING",
+        "value": "2000"
+      },
+      {
+        "name": "REQUEST_THROTTLING",
+        "value": "2000"
+      },
+      {
+        "name": "ROLLBAR_KEY",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:036192757250:secret:zqms-ecs-secrets-VhOh9o:EXPORT_ROLLBAR_KEY::"
+      },
+      {
+        "name": "S3_BUCKET",
+        "value": "exporter-prod1"
+      },
+      {
+        "name": "ZENQMS_DOMAIN",
+        "value": "https://app.zenqms.com"
+      }
+    ],
+    "resourceRequirements": null,
+    "ulimits": null,
+    "dnsServers": null,
+    "mountPoints": [],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": null,
+    "memory": 128,
+    "memoryReservation": null,
+    "volumesFrom": [],
+    "stopTimeout": null,
+    "image": "097589753303.dkr.ecr.us-east-1.amazonaws.com/exporter:0651144dde9ac615c3649eca2c0917b6e0609d0d",
+    "startTimeout": null,
+    "firelensConfiguration": null,
+    "dependsOn": null,
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": null,
+    "hostname": null,
+    "extraHosts": null,
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": null,
+    "systemControls": null,
+    "privileged": null,
+    "name": "exporter"
+  }
+]

@@ -17,20 +17,27 @@ module "security" {
     environment = "devlopment"
 }
 
-module "instance" {
-    source = "../module/instance"
-    subnet_id = module.network.subnet_id[0]
-    security_group = module.security.security_group
-    environment = "devlopment"
-    key = "iAdarsh"
-    ssh_user = "ubuntu"
-    private_key_path = "/home/ec2-user/Downloads/iAdarsh.pem"
+module "elasticcache"{
+    source = "../module/elasticcache"
 }
 
-locals {
+module "s3" {
+    source = "../module/s3"
+}
+
+module "cloudfront"{
+    source = "../module/cloudfront"
+}
+
+# module "dynamodb" {
+#     source = "../module/dynamodb"
+# }
+
+# module "opswork" {
+#     source = "../module/opswork"
+# }
+
+module "ecs"{
+    source = "../module/ecs"
     vpc_id = module.network.vpc_id
-    subnet_id = module.network.subnet_id
-    ssh_user = "ubuntu"
-    key_name = "Adarsh"
-    private_key_path = "/home/ec2-user/Downloads/iAdarsh.pem"
 }
