@@ -7,14 +7,14 @@ provider "aws" {
 module "network" {
     source = "../module/network"
     region = "us-east-1"
-    environment = "devlopment"
+    environment = "ZenQMS"
 }
 
 module "security" {
     source = "../module/security"
     vpc = module.network.vpc
     vpc_id = module.network.vpc_id
-    environment = "devlopment"
+    environment = "ZenQMS"
 }
 
 module "elasticcache"{
@@ -25,9 +25,9 @@ module "s3" {
     source = "../module/s3"
 }
 
-module "cloudfront"{
-    source = "../module/cloudfront"
-}
+# module "cloudfront"{
+#     source = "../module/cloudfront"
+# }
 
 # module "dynamodb" {
 #     source = "../module/dynamodb"

@@ -30,7 +30,6 @@ module "logs" {
 
 resource "aws_cloudfront_distribution" "default" {
   count = module.this.enabled ? 1 : 0
-
   enabled             = var.distribution_enabled
   is_ipv6_enabled     = var.is_ipv6_enabled
   comment             = var.comment
